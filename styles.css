@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    background: #004080; /* Color azul oscuro */
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.profile-image {
+    width: 150px; /* Ajustar el tamaño según sea necesario */
+    height: auto; /* Mantener proporciones */
+    border-radius: 50%; /* Hacer la imagen circular */
+    margin-top: 15px; /* Espacio superior */
+}
+
+h1 {
+    margin: 0;
+}
+
+h2 {
+    color: #004080; /* Color azul oscuro para los subtítulos */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+section {
+    margin: 20px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none; /* Sin viñetas */
+    padding-left: 0; /* Sin sangría */
+}
+
+ul li {
+    margin-bottom: 10px; /* Espacio entre proyectos */
+}
+
+ul li a {
+    text-decoration: none; /* Sin subrayado */
+    color: #007bff; /* Color azul para enlaces */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Subrayar al pasar el mouse */
+}
+
+.redes {
+    display: flex;
+    justify-content: center;
+}
+
+.redes a {
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.redes i {
+    font-size: 30px; /* Tamaño del icono */
+}
+
+.facebook { color: #1877f2; }
+.twitter { color: #1da1f2; }
+.instagram { color: #c32aa3; }
+.linkedin { color: #0077b5; }
+.github { color: #333; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+}
