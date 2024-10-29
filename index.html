@@ -14,22 +14,44 @@
             <h1>Hola, soy Ronaldo Albites Narvaja</h1>
             <p>Estudiante de Arquitectura de Sistemas y Plataformas de Servicios TI | Apasionado por la tecnología y el desarrollo web</p>
             <img src="[URL_DE_TU_IMAGEN]" alt="Ronaldo Albites Narvaja" class="profile-image">
+            <button id="aboutMeBtn">Sobre Mí</button> <!-- Botón para abrir la ventana modal -->
         </div>
     </header>
     
     <main class="container">
-        <section id="about">
-            <h2>Sobre Mí</h2>
-            <p>Soy un estudiante comprometido con el aprendizaje continuo en el campo de la tecnología. Me interesa el desarrollo de software y la creación de soluciones innovadoras que mejoren la experiencia del usuario.</p>
+        <section class="skills-section">
+            <button class="toggle-btn" id="toggleSkills">Mostrar Habilidades</button>
+            <div class="skills-content" style="display: none;">
+                <h2>Habilidades</h2>
+                <div class="skill-card">
+                    <h3>Desarrollo Web</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Programación</h3>
+                    <p>Python, Java</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Diseño UX/UI</h3>
+                    <p>Creación de interfaces intuitivas y atractivas.</p>
+                </div>
+                <div class="skill-card">
+                    <h3>Trabajo en Equipo</h3>
+                    <p>Colaboración efectiva en proyectos multidisciplinarios.</p>
+                </div>
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>Proyectos Académicos</h2>
-            <ul>
-                <li><a href="[enlace a proyecto 1]">Sistema de Gestión de Estudiantes</a></li>
-                <li><a href="[enlace a proyecto 2]">Aplicación Web de Tareas</a></li>
-                <li><a href="[enlace a proyecto 3]">Portal de Noticias Universitarias</a></li>
-            </ul>
+        <section class="projects-section">
+            <button class="toggle-btn" id="toggleProjects">Mostrar Proyectos</button>
+            <div class="projects-content" style="display: none;">
+                <h2>Proyectos Académicos</h2>
+                <ul>
+                    <li><a href="[enlace a proyecto 1]">Sistema de Gestión de Estudiantes</a></li>
+                    <li><a href="[enlace a proyecto 2]">Aplicación Web de Tareas</a></li>
+                    <li><a href="[enlace a proyecto 3]">Portal de Noticias Universitarias</a></li>
+                </ul>
+            </div>
         </section>
 
         <section id="social">
@@ -40,13 +62,71 @@
                 <a href="[tu enlace de Instagram]" target="_blank" class="icon instagram"><i class="fab fa-instagram"></i></a>
                 <a href="[tu enlace de LinkedIn]" target="_blank" class="icon linkedin"><i class="fab fa-linkedin-in"></i></a>
                 <a href="[tu enlace de GitHub]" target="_blank" class="icon github"><i class="fab fa-github"></i></a>
+                <!-- Icono de WhatsApp -->
+                <a href="[tu enlace de WhatsApp]" target="_blank" class="icon whatsapp"><i class="fab fa-whatsapp"></i></a>
             </div>
         </section>
+
     </main>
+
+    <!-- Ventana Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span> <!-- Botón para cerrar la ventana modal -->
+            <h2>Sobre Mí</h2>
+            <p>Soy un estudiante comprometido con el aprendizaje continuo en el campo de la tecnología. Me interesa el desarrollo de software y la creación de soluciones innovadoras que mejoren la experiencia del usuario.</p>
+
+            <h3>Mi Trayectoria Académica</h3>
+            <p>Cursando actualmente la carrera de Arquitectura de Sistemas y Plataformas de Servicios TI, he adquirido conocimientos en diversas áreas como desarrollo web, programación orientada a objetos y diseño UX/UI.</p>
+
+            <h3>Aficiones e Intereses</h3>
+            <p>Aparte del desarrollo tecnológico, disfruto aprender sobre nuevas tendencias en tecnología, participar en hackatones y colaborar en proyectos open-source.</p>
+
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2024 Ronaldo Albites Narvaja. Todos los derechos reservados.</p>
     </footer>
+
+    <!-- Script para manejar la ventana modal -->
+    <script>
+        // Obtener elementos del DOM
+        var modal = document.getElementById("myModal");
+        var btn = document.getElementById("aboutMeBtn");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en el botón, abrir la ventana modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // Cuando el usuario hace clic en (x), cerrar la ventana modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // Cuando el usuario hace clic fuera de la ventana modal, cerrarla
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Funcionalidad para mostrar/ocultar habilidades
+        document.getElementById("toggleSkills").onclick = function() {
+            var skillsContent = document.querySelector(".skills-content");
+            skillsContent.style.display = skillsContent.style.display === "none" ? "block" : "none";
+            this.textContent = this.textContent === "Mostrar Habilidades" ? "Ocultar Habilidades" : "Mostrar Habilidades";
+        };
+
+        // Funcionalidad para mostrar/ocultar proyectos
+        document.getElementById("toggleProjects").onclick = function() {
+            var projectsContent = document.querySelector(".projects-content");
+            projectsContent.style.display = projectsContent.style.display === "none" ? "block" : "none";
+            this.textContent = this.textContent === "Mostrar Proyectos" ? "Ocultar Proyectos" : "Mostrar Proyectos";
+        };
+    </script>
 
 </body>
 </html>
